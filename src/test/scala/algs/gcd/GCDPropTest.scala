@@ -1,6 +1,5 @@
-package hello.gcd
+package algs.gcd
 
-import algs.gcd.GCD
 import org.scalacheck.Prop.forAll
 import org.scalacheck.Properties
 
