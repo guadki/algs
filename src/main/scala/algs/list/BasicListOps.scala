@@ -49,9 +49,7 @@ trait BasicListOps {
         case _ :: Nil => isSortedRec(Nil, acc)
         case x :: xs => isSortedRec(xs, acc && (x <= xs.head))
       }
-    } else {
-      acc
-    }
+    } else acc
   }
 
 }
