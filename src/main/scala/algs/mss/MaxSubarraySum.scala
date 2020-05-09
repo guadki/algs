@@ -1,5 +1,7 @@
 package algs.mss
 
+import scala.annotation.tailrec
+
 /*
   Given an array of n numbers, calculate the maximum subarray sum,
   i.e., the largest possible sum of a sequence of consecutive values
@@ -21,7 +23,7 @@ trait MaxSubarraySum {
     mssRec(list)
   }
 
-  @scala.annotation.tailrec
+  @tailrec
   private def mssRec(xs: List[Int], sum: Int = 0, best: Int = 0): Int = {
     xs match {
       case Nil => Math.max(best, sum)
