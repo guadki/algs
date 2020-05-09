@@ -37,4 +37,19 @@ trait BasicListOps {
     }
   }
 
+  def isSorted(list: List[Int]): Boolean = {
+    isSortedRec(list)
+  }
+
+  @tailrec
+  private def isSortedRec(list: List[Int], acc: Boolean = true): Boolean = {
+    if (acc) {
+      list match {
+        case Nil => acc
+        case _ :: Nil => isSortedRec(Nil, acc)
+        case x :: xs => isSortedRec(xs, acc && (x <= xs.head))
+      }
+    } else acc
+  }
+
 }
