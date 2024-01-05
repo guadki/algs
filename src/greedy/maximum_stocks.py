@@ -8,17 +8,17 @@ def maximum_stocks(prices: list[int], money: int) -> int:
     stocks_bought = 0
     Stock = collections.namedtuple("Stock", ["quantity", "price"])
 
-    prices = sorted(
+    stocks = sorted(
         [Stock(p[0], p[1]) for p in enumerate(prices, start=1)], key=lambda s: s.price
     )
 
-    for p in prices:
-        if money - (p.price * p.quantity) >= 0:
-            money -= p.price * p.quantity
-            stocks_bought += p.quantity
+    for s in stocks:
+        if money - (s.price * s.quantity) >= 0:
+            money -= s.price * s.quantity
+            stocks_bought += s.quantity
         else:
-            quantity = money // p.price
-            money -= p.price * quantity
+            quantity = money // s.price
+            money -= s.price * quantity
             stocks_bought += quantity
 
     return stocks_bought

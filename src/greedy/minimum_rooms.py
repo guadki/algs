@@ -11,11 +11,11 @@
 
 
 def minimum_rooms(slots: list[str]) -> int:
-    slots = [int(slot, 2) for slot in slots]
+    slots_bin = [int(slot, 2) for slot in slots]
     rooms = 1
-    check = slots[0]
-    for i in range(1, len(slots)):
-        check &= slots[i]
+    check = slots_bin[0]
+    for i in range(1, len(slots_bin)):
+        check &= slots_bin[i]
         if check:
             rooms += 1
         else:
