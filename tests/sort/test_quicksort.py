@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.sort import quicksort
+from algs.sort import quicksort
 from test_utils import is_sorted
 
 

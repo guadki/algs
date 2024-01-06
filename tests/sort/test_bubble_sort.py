@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.sort import bubble_sort
+from algs.sort import bubble_sort
 from test_utils import is_sorted
 
 

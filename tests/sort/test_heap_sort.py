@@ -1,5 +1,5 @@
 from unittest import TestCase
-from src.sort import heap_sort
+from algs.sort import heap_sort
 from test_utils import is_sorted
 
 
