@@ -2,7 +2,7 @@ import queue
 
 
 def optimal_merge_pattern(files: list[int]) -> int:
-    files_queue = queue.PriorityQueue(len(files))
+    files_queue: queue.PriorityQueue[int] = queue.PriorityQueue(len(files))
     for file in files:
         files_queue.put(file)
 

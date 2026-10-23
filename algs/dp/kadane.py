@@ -10,11 +10,11 @@ def maximum_subarray_sum(numbers: list[int]) -> int:
     if not len(numbers):
         raise ValueError("input list cannot be empty")
 
-    best_sum = -math.inf
+    best_sum: int = int(-math.inf)
     current_sum = 0
 
     for number in numbers:
-        current_sum = max(number, current_sum + number)
+        current_sum: int = max(number, current_sum + number)
         best_sum = max(best_sum, current_sum)
     return best_sum
 

@@ -15,13 +15,13 @@ class Job:
 
 
 def job_sequence(jobs: list[Job]) -> list[Job]:
-    result = []
-    used_jobs = []
+    result: list[Job] = []
+    used_jobs: list[str] = []
     max_deadline = max(jobs, key=lambda j: j.deadline).deadline
     # sort jobs by profit desc
     jobs = sorted(jobs, key=lambda j: j.profit, reverse=True)
 
-    for i in range(max_deadline, 0, -1):
+    for _ in range(max_deadline, 0, -1):
         for job in jobs:
             # pick the highest profit in currently checked deadline (for d=2 its deadlines 2,3,4...) that hasn't been
             # picked yet

@@ -1,12 +1,15 @@
-from collections import namedtuple
+from typing import NamedTuple
 
-Process = namedtuple("Process", ["process_size", "block_size"])
+
+class Process(NamedTuple):
+    process_size: int
+    block_size: int
 
 
 def allocate_partitions(
     block_sizes: list[int], process_sizes: list[int]
 ) -> list[Process]:
-    processes = []
+    processes: list[Process] = []
     block_sizes.sort(reverse=True)
     process_sizes.sort(reverse=True)
 
