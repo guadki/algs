@@ -1,9 +1,13 @@
 # the goal is to fill a container (the "knapsack") with fractional amounts of different materials chosen to maximize
 # the value of the selected materials.
-from collections import namedtuple
+from dataclasses import dataclass
 from fractions import Fraction
 
-Material = namedtuple("Material", ["weight", "value"])
+
+@dataclass(frozen=True, slots=True)
+class Material:
+    weight: int
+    value: int
 
 
 def continuous_knapsack_problem(materials: list[Material], knapsack_capacity: int):
